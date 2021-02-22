@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:extra-light|Vast+Shadow" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <label for="latitude">Enter Latitude: </label>
+        <input v-model="latitude" type="text" id="latitude" name="latitude"><br><br>
+        <label for="longitude">Enter Longitude: </label>
+        <input v-model="longitude" type="text" id="longitude" name="longitude"><br><br>
+        <button v-on:click="getUpdate()">Enter</button><br><br />
+                                                            <div v-if="seen" id="info">
+
+                                                               <span> The temperature is {{temp}}</span><br><br />
+                                                               <span> The humidity is {{humidity}}</span><br><br />
+                                                               <span> The pressure is {{pressure}}</span><br><br />
+                                                               <span> It feel's like {{feels_like}}</span><br><br />
+                                                                <span> Sunrise is {{sunrise}}</span><br><br />
+                                                                <span> Sunset is {{sunset}}</span><br><br />
+                                                                <span> Visibility is {{visibility}}</span><br><br />
+                                                                <span> Time zone is is {{timezone}}</span><br><br />
+                                                                <span> Time zone offset is is {{timezone_offset}}</span><br><br />
+
+                                                           </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
